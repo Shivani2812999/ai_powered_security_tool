@@ -1,49 +1,67 @@
-🛡️ AI Security Assessment Tool
+# 🛡️ AI Security Assessment Tool
 
-An AI-powered cybersecurity system that analyzes URLs, IP addresses, and files to detect potential threats using security APIs and generates intelligent risk scores with AI-generated reports.
+An AI-powered cybersecurity system that analyzes **URLs, IP addresses, and files** to detect potential threats using external security APIs and generates **intelligent risk scores with AI-generated security reports**.
 
-🚀 Features
-🔍 Scan URLs, IP addresses, and files
-🧠 Integrates multiple security APIs:
-VirusTotal
-AbuseIPDB
-URLScan
-📊 Custom Risk Scoring Engine (0–100)
-⚠️ Risk Classification:
-Safe
-Low Risk
-Medium Risk
-High Risk
-Critical
-🤖 AI-generated security report (LLM-based)
-🖥️ Simple UI using Streamlit / Gradio
-📄 Clean API-based architecture
-🏗️ System Architecture
+---
+
+## 🚀 Features
+
+- 🔍 Scan URLs, IP addresses, and files (PDF, EXE, ZIP)
+- 🧠 Integrates multiple security APIs:
+  - VirusTotal
+  - AbuseIPDB
+  - URLScan
+- 📊 Custom Risk Scoring Engine (0–100 scale)
+- ⚠️ Risk Levels:
+  - Safe
+  - Low Risk
+  - Medium Risk
+  - High Risk
+  - Critical
+- 🤖 AI-powered security report generation using LLMs
+- 🖥️ Simple UI using Streamlit / Gradio
+- ⚙️ Modular backend architecture
+
+---
+
+## 🏗️ System Architecture
+
+
 User Input (URL / IP / File)
-        ↓
+↓
 Security API Layer
 (VirusTotal / AbuseIPDB / URLScan)
-        ↓
+↓
 Data Processing Layer
-        ↓
+↓
 Risk Scoring Engine
-        ↓
+↓
 AI Report Generator (LLM)
-        ↓
+↓
 Frontend UI (Streamlit / Gradio)
-⚙️ Tech Stack
-Python 🐍
-FastAPI / Flask (Backend APIs)
-Streamlit / Gradio (Frontend UI)
-REST APIs (VirusTotal, AbuseIPDB, URLScan)
-OpenAI / Gemini / Ollama (LLM)
-Git & GitHub
-Docker (optional)
-📦 Installation
-1. Clone Repository
+
+
+---
+
+## ⚙️ Tech Stack
+
+- Python 🐍
+- FastAPI / Flask (Backend APIs)
+- Streamlit / Gradio (Frontend UI)
+- REST APIs (VirusTotal, AbuseIPDB, URLScan)
+- OpenAI / Gemini / Ollama (LLM Integration)
+- Git & GitHub
+- Docker (optional)
+
+---
+
+## 📦 Installation & Setup
+
+### 1. Clone the repository
+```bash
 git clone https://github.com/your-username/ai-security-tool.git
 cd ai-security-tool
-2. Create Virtual Environment
+2. Create virtual environment
 python -m venv .venv
 
 Activate:
@@ -55,45 +73,45 @@ Windows
 Mac/Linux
 
 source .venv/bin/activate
-3. Install Dependencies
+3. Install dependencies
 pip install -r requirements.txt
-4. Add Environment Variables
+4. Configure environment variables
 
-Create a .env file:
+Create a .env file in root directory:
 
-VIRUSTOTAL_API_KEY=your_key
-ABUSEIPDB_API_KEY=your_key
-URLSCAN_API_KEY=your_key
-OPENAI_API_KEY=your_key
-5. Run the Application
-
-If FastAPI:
-
+VIRUSTOTAL_API_KEY=your_key_here
+ABUSEIPDB_API_KEY=your_key_here
+URLSCAN_API_KEY=your_key_here
+OPENAI_API_KEY=your_key_here
+5. Run the application
+If using FastAPI:
 uvicorn backend.main:app --reload
-
-If Streamlit:
-
+If using Streamlit:
 streamlit run frontend/app.py
 🧠 How It Works
-User submits input (URL/IP/File)
-System calls security APIs
-Data is normalized and processed
-Risk engine calculates score
-AI model generates human-readable report
+User submits input (URL, IP, or File)
+System sends data to security APIs
+API responses are normalized
+Risk engine calculates unified risk score
+LLM generates human-readable report
 Results displayed in UI
 📊 Risk Engine Logic
-VirusTotal detections → weighted scoring
-AbuseIPDB reputation → abuse confidence impact
+
+The system calculates risk based on weighted signals:
+
+VirusTotal detections → malware/suspicious weighting
+AbuseIPDB reputation → abuse confidence + report count
 URLScan verdict → malicious/suspicious penalty
-Final score normalized to 0–100 scale
+
+Final score is normalized between 0–100 and mapped to risk levels.
+
 📌 Example Output
 Risk Score: 67
 Risk Level: High Risk
-AI Report:
-Suspicious activity detected
-Multiple security vendor flags
+AI-Generated Report:
+Multiple security engines flagged suspicious activity
+Domain shows poor reputation history
 Recommendation: Avoid interacting with this resource
-
 📁 Project Structure
 ai-security-tool/
 │
@@ -109,7 +127,18 @@ ai-security-tool/
 ├── requirements.txt
 ├── .env
 ├── README.md
-
+🔮 Future Enhancements
+🔥 Malware static & dynamic file analysis
+🔥 RAG-based threat intelligence system
+🔥 Vector database for historical threat tracking
+🔥 Real-time monitoring dashboard
+🔥 SaaS deployment for enterprise use
+🎯 Use Cases
+Cybersecurity analysts
+SOC teams
+Threat intelligence automation
+Educational cybersecurity projects
+Enterprise security monitoring tools
 👨‍💻 Author
 
 Shivani Hadapad
