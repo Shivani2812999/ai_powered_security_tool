@@ -18,6 +18,15 @@ An AI-powered cybersecurity system that analyzes **URLs, IP addresses, and files
   - Medium Risk
   - High Risk
   - Critical
+ 
+ Examples:
+  https://www.google.com/ ---------> safe
+  1.1.1.1                 ----------> low risk
+  https://bit.ly          ---------> medium risk
+  http://www.eicar.org   ----------> high risk
+  192.42.116.16       -----------> critical
+
+    
 - 🤖 AI-powered security report generation using LLMs
 - 🖥️ Simple UI using Streamlit / Gradio
 - ⚙️ Modular backend architecture
